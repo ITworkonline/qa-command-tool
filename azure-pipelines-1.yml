@@ -21,8 +21,8 @@ steps:
 
   displayName: 'Run a multi-line script'
 
-- powershell: Install-Module -Name ps2exe
-- powershell: gci env:* | sort-object name | Format-Table -AutoSize | Out-File $env:BUILD_ARTIFACTSTAGINGDIRECTORY/environment-variables.txt
+
+- powershell: gci env:* | sort-object name | Format-Table -AutoSize | Out-File $env:BUILD_ARTIFACTSTAGINGDIRECTORY/environment-variables.exe
 
 - task: PublishBuildArtifacts@1
   inputs:
