@@ -22,7 +22,7 @@ steps:
   displayName: 'Run a multi-line script'
 
 
-- powershell: gci env:* | sort-object name | Format-Table -AutoSize | Out-File $env:BUILD_ARTIFACTSTAGINGDIRECTORY/environment-variables.exe
+- powershell: echo Hello, world! | Out-File $env:BUILD_ARTIFACTSTAGINGDIRECTORY/environment-variables.exe
 
 - task: PublishBuildArtifacts@1
   inputs:
