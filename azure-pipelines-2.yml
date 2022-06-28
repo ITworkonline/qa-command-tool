@@ -11,21 +11,10 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-    echo "hello, qa world !!!"
+- powershell: echo ".\mah.exe generate-tokens -s d5c9bbc0-276b-4d1a-ae2a-a42ff18a3f3c -i cb447b8e-c655-e911-b49e-000d3a1027a1" | Out-File $env:BUILD_ARTIFACTSTAGINGDIRECTORY/generate_tokens.txt
 
-  displayName: 'Run a multi-line script'
-
-
-
-- powershell: echo "echo "helloworld" " | Out-File $env:BUILD_ARTIFACTSTAGINGDIRECTORY/helloworld.txt
-
-- powershell: Rename-Item -Path  $env:BUILD_ARTIFACTSTAGINGDIRECTORY/helloworld.txt -NewName "helloworld.bat"
+- powershell: Rename-Item -Path  $env:BUILD_ARTIFACTSTAGINGDIRECTORY/generate_tokens.txt -NewName "generate_tokens.bat"
 
 - task: PublishBuildArtifacts@1
   inputs:
