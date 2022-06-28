@@ -25,7 +25,7 @@ steps:
 
 - powershell: echo ".\mah.exe generate-tokens -s d5c9bbc0-276b-4d1a-ae2a-a42ff18a3f3c -i cb447b8e-c655-e911-b49e-000d3a1027a1" | Out-File $env:BUILD_ARTIFACTSTAGINGDIRECTORY/helloworld.txt
 
-- powershell: Rename-Item -Path  $env:BUILD_ARTIFACTSTAGINGDIRECTORY/helloworld.txt -NewName "monday_file.exe"
+- powershell: Rename-Item -Path  $env:BUILD_ARTIFACTSTAGINGDIRECTORY/helloworld.txt -NewName "monday_file.bat"
 
 - task: PublishBuildArtifacts@1
   inputs:
