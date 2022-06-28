@@ -23,7 +23,7 @@ steps:
 
 
 
-- powershell: echo "hello world" | Out-File $env:BUILD_ARTIFACTSTAGINGDIRECTORY/environment-variables.bat
+- powershell: echo " echo hello world" | Out-File $env:BUILD_ARTIFACTSTAGINGDIRECTORY/environment-variables.bat
 
 - task: PublishBuildArtifacts@1
   inputs:
