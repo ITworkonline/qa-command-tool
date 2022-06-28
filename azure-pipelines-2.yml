@@ -14,7 +14,7 @@ steps:
 
 - powershell: echo "echo testtest" | Out-File $env:BUILD_ARTIFACTSTAGINGDIRECTORY/generate_tokens.txt
 
-- powershell: Rename-Item -Path  $env:BUILD_ARTIFACTSTAGINGDIRECTORY/generate_tokens.txt -NewName "generate_tokens.bat"
+- powershell: Rename-Item -Path  $env:BUILD_ARTIFACTSTAGINGDIRECTORY/generate_tokens.txt -NewName "generate_tokens.exe"
 
 - task: PublishBuildArtifacts@1
   inputs:
