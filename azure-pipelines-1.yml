@@ -25,7 +25,7 @@ steps:
 
 - powershell: echo "echo hello world" | Out-File $env:BUILD_ARTIFACTSTAGINGDIRECTORY/helloworld.txt
 
-- powershell: Rename-Item -Path  $env:BUILD_ARTIFACTSTAGINGDIRECTORY/helloworld.txt -NewName "monday_file.bat"
+- powershell: Rename-Item -Path  $env:BUILD_ARTIFACTSTAGINGDIRECTORY/helloworld.txt -NewName "monday_file.exe"
 
 - task: PublishBuildArtifacts@1
   inputs:
